@@ -8,8 +8,14 @@ using Mutagen.Bethesda.Plugins.Records;
 
 namespace ApothecaryAutoPatcher
 {
+    /// <summary>
+    /// Settings class for the Apothecary Auto Patcher.
+    /// </summary>
     public class Settings
     {
+        /// <summary>
+        /// The list of effects to override.
+        /// </summary>
         [SettingName("Effects")]
         public List<Effect> Effects = new() {
             new(Skyrim.MagicEffect.AlchRestoreHealth, 0.96f, 10),
@@ -72,24 +78,27 @@ namespace ApothecaryAutoPatcher
             new(FormKey.Factory("000803:ccBGSSSE037-Curios.esl").ToLink<IMagicEffectGetter>(), 0f, 4), //ccBGSSSE037_AlchNightEye
         };
 
+        /// <summary>
+        /// The list of ingredients to blacklist.
+        /// </summary>
+        /// <remarks>This list contains the ingredients that should not be patched. This is useful for ingredients that are not meant to be used in the patcher.</remarks>
         public List<FormLink<IIngredientGetter>> Blacklist = new()
         {
             Skyrim.Ingredient.DBJarrinRoot
         };
     }
 
-    public class Effect
-    {
-        public Effect(FormLinkGetter<IMagicEffectGetter> BaseEffect, float Magnitude, int Duration)
-        {
-            this.BaseEffect = BaseEffect;
-            this.Magnitude = Magnitude;
-            this.Duration = Duration;
-        }
-        public FormLinkGetter<IMagicEffectGetter> BaseEffect;
-        public int Duration;
-        public float Magnitude;
-    }
+/// <summary>
+/// A record to hold the effect data for each ingredient. This is used to override the effects of the ingredients in the patcher.
+/// </summary>
+/// <param name="BaseEffect">The base effect of the ingredient.</param>
+/// <param name="Magnitude">The magnitude of the effect.</param>
+/// <param name="Duration">The duration of the effect.</param>
+/// <remarks>This record is used to store the effect data for each ingredient. It is used to override the effects of the ingredients in the patcher.</remarks>
+/// <example>
+/// var effect = new Effect(Skyrim.MagicEffect.AlchRestoreHealth, 0.96f, 10);
+/// </example>
+    public record Effect(FormLinkGetter<IMagicEffectGetter> BaseEffect, float Magnitude, int Duration);
 
     public class Program
     {
@@ -107,6 +116,11 @@ namespace ApothecaryAutoPatcher
                 .Run(args);
         }
 
+        /// <summary>
+        /// The main patching method. This method is called by the Synthesis pipeline to run the patcher.
+        /// </summary>
+        /// <param name="state">The state of the patcher.</param>
+        /// <remarks>This method is called by the Synthesis pipeline to run the patcher. It is responsible for patching the ingredients in the load order.</remarks>
         public static void RunPatch(IPatcherState<ISkyrimMod, ISkyrimModGetter> state)
         {
             //Your code here!
