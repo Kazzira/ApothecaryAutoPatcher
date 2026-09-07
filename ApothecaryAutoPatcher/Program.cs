@@ -110,7 +110,7 @@ namespace ApothecaryAutoPatcher
             new(MagicEffects.RoHAlchStagger,                         MagicEffectInfo.MAG_AlchCalm),
             new(MagicEffects.RoHDamageHealthRavageContact,           MagicEffectInfo.AlchDamageWeapon),
             new(MagicEffects.RoHDamageMagickaRavageContact,          MagicEffectInfo.AlchDamageArmor),
-            new(MagicEffects.RoHDamageMagickaRavageContact,          MagicEffectInfo.AlchBurden),
+            new(MagicEffects.RoHDamageStaminaRavageContact,          MagicEffectInfo.AlchBurden),
             new(MagicEffects.RoHGFTMeleeDamagicMagicResistSkulltula, MagicEffectInfo.AlchWeaknessMagic),
             new(MagicEffects.RoHPoisonCloakFFSelf,                   MagicEffectInfo.AlchFortifyArmorRating),
         };
