@@ -13,69 +13,95 @@ namespace ApothecaryAutoPatcher
     /// </summary>
     public class Settings
     {
+    
         /// <summary>
         /// The list of effects to override.
         /// </summary>
         [SettingName("Effects")]
-        public List<Effect> Effects = new() {
-            new(Skyrim.MagicEffect.AlchRestoreHealth, 0.96f, 10),
-            new(Skyrim.MagicEffect.AlchRestoreStamina, 0.96f, 10),
-            new(Skyrim.MagicEffect.AlchRestoreMagicka, 0.96f, 10),
-            new(Skyrim.MagicEffect.AlchFortifyHealth, 2.67f, 300),
-            new(Skyrim.MagicEffect.AlchFortifyStamina, 2.67f, 300),
-            new(Skyrim.MagicEffect.AlchFortifyMagicka, 2.67f, 300),
-            new(Skyrim.MagicEffect.AlchFortifyHealRate, 2.67f, 300),
-            new(Skyrim.MagicEffect.AlchFortifyStaminaRate, 2.67f, 300),
-            new(Skyrim.MagicEffect.AlchFortifyMagickaRate, 2.67f, 300),
-            new(Skyrim.MagicEffect.AlchFortifyAlteration, 6.67f, 60),
-            new(Skyrim.MagicEffect.AlchFortifyConjuration, 6.67f, 60),
-            new(Skyrim.MagicEffect.AlchFortifyDestruction, 3.33f, 60),
-            new(Skyrim.MagicEffect.AlchFortifyRestoration, 3.33f, 60),
-            new(Skyrim.MagicEffect.AlchFortifyIllusion, 3.33f, 60),
-            new(Skyrim.MagicEffect.AlchFortifySneak, 3.33f, 60),
-            new(Skyrim.MagicEffect.AlchFortifyAlchemy, 3.33f, 60), //MAG_AlchFortifySneakAttacks
-            new(Skyrim.MagicEffect.AlchFortifyLockpicking, 3.33f, 60),
-            new(Skyrim.MagicEffect.AlchFortifyPickpocket, 3.33f, 60),
-            new(Skyrim.MagicEffect.AlchFortifySmithing, 3.33f, 60), //MAG_AlchFortifyUnarmed
-            new(Skyrim.MagicEffect.AlchFortifyEnchanting, 3.33f, 60), //MAG_AlchFortifyPowerAttacks
-            new(Skyrim.MagicEffect.AlchFortifyHeavyArmor, 3.33f, 60), //MAG_AlchFortifyShouts
-            new(Skyrim.MagicEffect.AlchFortifyOneHanded, 3.33f, 60),
-            new(Skyrim.MagicEffect.AlchFortifyTwoHanded, 3.33f, 60),
-            new(Skyrim.MagicEffect.AlchFortifyMarksman, 3.33f, 60),
-            new(Skyrim.MagicEffect.AlchFortifyBlock, 3.33f, 60),
-            new(Skyrim.MagicEffect.AlchFortifyLightArmor, 6.67f, 300), //MAG_AlchFortifyArmorRating
-            new(Skyrim.MagicEffect.AlchFortifyCarryWeight, 6.67f, 300),
-            new(Skyrim.MagicEffect.AlchFortifyBarter, 1.33f, 300),
-            new(Skyrim.MagicEffect.AlchResistFire, 3.33f, 60),
-            new(Skyrim.MagicEffect.AlchResistFrost, 3.33f, 60),
-            new(Skyrim.MagicEffect.AlchResistShock, 3.33f, 60),
-            new(Skyrim.MagicEffect.AlchResistPoison, 3.33f, 60),
-            new(Skyrim.MagicEffect.AlchResistMagic, 1.67f, 300),
-            new(Skyrim.MagicEffect.AlchInvisibillity, 0f, 4),
-            new(Skyrim.MagicEffect.AlchWaterbreathing, 0f, 4),
-            new(Skyrim.MagicEffect.AlchCureDisease, 1f, 0),
-            new(Skyrim.MagicEffect.AlchWeaknessFire, 6.66f, 60),
-            new(Skyrim.MagicEffect.AlchWeaknessFrost, 6.66f, 60),
-            new(Skyrim.MagicEffect.AlchWeaknessShock, 6.66f, 60),
-            new(Skyrim.MagicEffect.AlchWeaknessPoison, 6.66f, 60),
-            new(Skyrim.MagicEffect.AlchWeaknessMagic, 2.67f, 60), //MAG_AlchReflectDamage
-            new(Skyrim.MagicEffect.AlchParalysis, 3.33f, 10),
-            new(Skyrim.MagicEffect.AlchDamageHealth, 0.44f, 10),
-            new(Skyrim.MagicEffect.AlchDamageStamina, 0.88f, 10),
-            new(Skyrim.MagicEffect.AlchDamageMagicka, 0.88f, 10),
-            new(Skyrim.MagicEffect.AlchDamageHealthDuration, 0.27f, 30),
-            new(Skyrim.MagicEffect.AlchDamageStaminaDuration, 0.52f, 30),
-            new(Skyrim.MagicEffect.AlchDamageStaminaRate, 3.33f, 30), //MAG_AlchCommand
-            new(Skyrim.MagicEffect.AlchDamageMagickaRate, 3.33f, 30), //MAG_AlchSilence
-            new(Skyrim.MagicEffect.AlchDamageHealthRavage, 3.33f, 60), //MAG_AlchDamageWeapon
-            new(Skyrim.MagicEffect.AlchDamageStaminaRavage, 3.33f, 30), //MAG_AlchCalm
-            new(Skyrim.MagicEffect.AlchDamageMagickaRavage, 19.950001f, 60), //MAG_AlchDamageArmor
-            new(Skyrim.MagicEffect.AlchDamageSpeed, 3.33f, 60), //MAG_AlchBurden
-            new(Skyrim.MagicEffect.AlchInfluenceConfDown, 3.33f, 30),
-            new(Skyrim.MagicEffect.AlchInfluenceAggUp, 3.33f, 30),
-            new(FormKey.Factory("000812:ccBGSSSE037-Curios.esl").ToLink<IMagicEffectGetter>(), 1.67f, 60), //ccBGSSSE037_AlchAbsorbSpell
-            new(FormKey.Factory("000846:ccBGSSSE037-Curios.esl").ToLink<IMagicEffectGetter>(), 0f, 4), //ccBGSSSE037_AlchLight
-            new(FormKey.Factory("000803:ccBGSSSE037-Curios.esl").ToLink<IMagicEffectGetter>(), 0f, 4), //ccBGSSSE037_AlchNightEye
+        public List<EffectToEffect> Effects = new() {
+            new(Skyrim.MagicEffect.AlchCureDisease,             MagicEffectInfo.AlchCureDisease),
+            new(Skyrim.MagicEffect.AlchDamageHealth,            MagicEffectInfo.AlchDamageHealth),
+            new(Skyrim.MagicEffect.AlchDamageHealthDuration,    MagicEffectInfo.AlchDamageHealthDuration),
+            new(Skyrim.MagicEffect.AlchDamageHealthRavage,      MagicEffectInfo.AlchDamageHealthRavage), //MAG_AlchDamageWeapon
+            new(Skyrim.MagicEffect.AlchDamageMagicka,           MagicEffectInfo.AlchDamageMagicka),
+            new(Skyrim.MagicEffect.AlchDamageMagickaRate,       MagicEffectInfo.AlchDamageMagickaRate), //MAG_AlchSilence
+            new(Skyrim.MagicEffect.AlchDamageMagickaRavage,     MagicEffectInfo.AlchDamageMagickaRavage), //MAG_AlchDamageArmor
+            new(Skyrim.MagicEffect.AlchDamageSpeed,             MagicEffectInfo.AlchDamageSpeed), //MAG_AlchBurden
+            new(Skyrim.MagicEffect.AlchDamageStamina,           MagicEffectInfo.AlchDamageStamina),
+            new(Skyrim.MagicEffect.AlchDamageStaminaDuration,   MagicEffectInfo.AlchDamageStaminaDuration),
+            new(Skyrim.MagicEffect.AlchDamageStaminaRavage,     MagicEffectInfo.AlchDamageStaminaRavage), //MAG_AlchCalm
+            new(Skyrim.MagicEffect.AlchDamageStaminaRate,       MagicEffectInfo.AlchDamageStaminaRate), //MAG_AlchCommand
+            new(Skyrim.MagicEffect.AlchFortifyAlchemy,          MagicEffectInfo.AlchFortifyAlchemy), //MAG_AlchFortifySneakAttacks
+            new(Skyrim.MagicEffect.AlchFortifyBarter,           MagicEffectInfo.AlchFortifyBarter),
+            new(Skyrim.MagicEffect.AlchFortifyBlock,            MagicEffectInfo.AlchFortifyBlock),
+            new(Skyrim.MagicEffect.AlchFortifyCarryWeight,      MagicEffectInfo.AlchFortifyCarryWeight),
+            new(Skyrim.MagicEffect.AlchFortifyAlteration,       MagicEffectInfo.AlchFortifyAlteration),
+            new(Skyrim.MagicEffect.AlchFortifyConjuration,      MagicEffectInfo.AlchFortifyConjuration),
+            new(Skyrim.MagicEffect.AlchFortifyDestruction,      MagicEffectInfo.AlchFortifyDestruction),
+            new(Skyrim.MagicEffect.AlchFortifyEnchanting,       MagicEffectInfo.AlchFortifyEnchanting), //MAG_AlchFortifyPowerAttacks
+            new(Skyrim.MagicEffect.AlchFortifyHealRate,         MagicEffectInfo.AlchFortifyHealRate),
+            new(Skyrim.MagicEffect.AlchFortifyHealth,           MagicEffectInfo.AlchFortifyHealth),
+            new(Skyrim.MagicEffect.AlchFortifyHeavyArmor,       MagicEffectInfo.AlchFortifyHeavyArmor), //MAG_AlchFortifyShouts
+            new(Skyrim.MagicEffect.AlchFortifyIllusion,         MagicEffectInfo.AlchFortifyIllusion),
+            new(Skyrim.MagicEffect.AlchFortifyLightArmor,       MagicEffectInfo.AlchFortifyLightArmor), //MAG_AlchFortifyArmorRating
+            new(Skyrim.MagicEffect.AlchFortifyLockpicking,      MagicEffectInfo.AlchFortifyLockpicking),
+            new(Skyrim.MagicEffect.AlchFortifyMagicka,          MagicEffectInfo.AlchFortifyMagicka),
+            new(Skyrim.MagicEffect.AlchFortifyMagickaRate,      MagicEffectInfo.AlchFortifyMagickaRate),
+            new(Skyrim.MagicEffect.AlchFortifyMarksman,         MagicEffectInfo.AlchFortifyMarksman),
+            new(Skyrim.MagicEffect.AlchFortifyOneHanded,        MagicEffectInfo.AlchFortifyOneHanded),
+            new(Skyrim.MagicEffect.AlchFortifyPickpocket,       MagicEffectInfo.AlchFortifyPickpocket),
+            new(Skyrim.MagicEffect.AlchFortifyRestoration,      MagicEffectInfo.AlchFortifyRestoration),
+            new(Skyrim.MagicEffect.AlchFortifySmithing,         MagicEffectInfo.AlchFortifySmithing), //MAG_AlchFortifyUnarmed
+            new(Skyrim.MagicEffect.AlchFortifySneak,            MagicEffectInfo.AlchFortifySneak),
+            new(Skyrim.MagicEffect.AlchFortifyStamina,          MagicEffectInfo.AlchFortifyStamina),
+            new(Skyrim.MagicEffect.AlchFortifyStaminaRate,      MagicEffectInfo.AlchFortifyStaminaRate),
+            new(Skyrim.MagicEffect.AlchFortifyTwoHanded,        MagicEffectInfo.AlchFortifyTwoHanded),
+            new(Skyrim.MagicEffect.AlchInfluenceConfDown,       MagicEffectInfo.AlchInfluenceConfDown),
+            new(Skyrim.MagicEffect.AlchInfluenceAggUp,          MagicEffectInfo.AlchInfluenceAggUp),
+            new(Skyrim.MagicEffect.AlchInvisibillity,           MagicEffectInfo.AlchInvisibillity),
+            new(Skyrim.MagicEffect.AlchParalysis,               MagicEffectInfo.AlchParalysis),
+            new(Skyrim.MagicEffect.AlchResistFire,              MagicEffectInfo.AlchResistFire),
+            new(Skyrim.MagicEffect.AlchResistFrost,             MagicEffectInfo.AlchResistFrost),
+            new(Skyrim.MagicEffect.AlchResistMagic,             MagicEffectInfo.AlchResistMagic),
+            new(Skyrim.MagicEffect.AlchResistPoison,            MagicEffectInfo.AlchResistPoison),
+            new(Skyrim.MagicEffect.AlchResistShock,             MagicEffectInfo.AlchResistShock),
+            new(Skyrim.MagicEffect.AlchRestoreHealth,           MagicEffectInfo.AlchRestoreHealth),
+            new(Skyrim.MagicEffect.AlchRestoreMagicka,          MagicEffectInfo.AlchRestoreMagicka),
+            new(Skyrim.MagicEffect.AlchRestoreStamina,          MagicEffectInfo.AlchRestoreStamina),
+            new(Skyrim.MagicEffect.AlchWaterbreathing,          MagicEffectInfo.AlchWaterbreathing),
+            new(Skyrim.MagicEffect.AlchWeaknessFire,            MagicEffectInfo.AlchWeaknessFire),
+            new(Skyrim.MagicEffect.AlchWeaknessFrost,           MagicEffectInfo.AlchWeaknessFrost),
+            new(Skyrim.MagicEffect.AlchWeaknessMagic,           MagicEffectInfo.AlchWeaknessMagic), //MAG_AlchReflectDamage
+            new(Skyrim.MagicEffect.AlchWeaknessPoison,          MagicEffectInfo.AlchWeaknessPoison),
+            new(Skyrim.MagicEffect.AlchWeaknessShock,           MagicEffectInfo.AlchWeaknessShock),
+            new(Skyrim.MagicEffect.FireCloakFFSelf,             MagicEffectInfo.AlchMuffle),
+            new(Skyrim.MagicEffect.FrostCloakFFSelf,            MagicEffectInfo.AlchParalysis),
+            new(Skyrim.MagicEffect.ShockCloakFFSelf,            MagicEffectInfo.AlchDamageStamina),
+            new(MagicEffects.AlchAbsorbSpell,                   MagicEffectInfo.AlchAbsorbSpell), //ccBGSSSE037_AlchAbsorbSpell
+            new(MagicEffects.AlchLight,                         MagicEffectInfo.AlchLight), //ccBGSSSE037_AlchLight
+            new(MagicEffects.AlchNightEye,                      MagicEffectInfo.AlchNightEye), //ccBGSSSE037_AlchNightEye
+            new(MagicEffects.BSKAlchCureParalysis,              MagicEffectInfo.AlchNightEye),
+            new(MagicEffects.BSKAlchDamageHealthRate,           MagicEffectInfo.AlchDamageHealthDuration),
+            new(MagicEffects.BSKAlchDetectAnimal,               MagicEffectInfo.AlchInfluenceConfDown),
+            new(MagicEffects.BSKAlchDetectLife,                 MagicEffectInfo.AlchFortifySmithing),
+            new(MagicEffects.BSKAlchFireDamage,                 MagicEffectInfo.AlchDamageMagickaRate),
+            new(MagicEffects.BSKAlchFortifySpeed,               MagicEffectInfo.MAG_FortifyMovementSpeed),
+            new(MagicEffects.BSKAlchFrostDamage,                MagicEffectInfo.AlchWeaknessFrost),
+            new(MagicEffects.BSKAlchLight,                      MagicEffectInfo.AlchLight),
+            new(MagicEffects.BSKAlchNightEye,                   MagicEffectInfo.AlchNightEye),
+            new(MagicEffects.BSKAlchReflectDamage,              MagicEffectInfo.AlchWeaknessMagic),
+            new(MagicEffects.BSKAlchReflectSpell,               MagicEffectInfo.AlchAbsorbSpell),
+            new(MagicEffects.BSKAlchResistDisease,              MagicEffectInfo.AlchResistPoison),
+            new(MagicEffects.BSKAlchShield,                     MagicEffectInfo.AlchFortifyBlock),
+            new(MagicEffects.BSKAlchShockDamage,                MagicEffectInfo.AlchWeaknessShock),
+            new(MagicEffects.BSKAlchWaterwalking,               MagicEffectInfo.AlchWaterWalking),
+            new(MagicEffects.RoHAlchArmorDamageFFContact50,     MagicEffectInfo.AlchDamageMagickaRavage),
+            new(MagicEffects.RoHAlchCureParalysis,              MagicEffectInfo.AlchCureDisease),
+            new(MagicEffects.RoHAlchFortifyUnarmedDamageFFSelf, MagicEffectInfo.AlchFortifySmithing),
+            new(MagicEffects.RoHAlchFrostDamageFFContact,       MagicEffectInfo.AlchWeaknessFrost),
+            new(MagicEffects.RoHAlchResistDisease,              MagicEffectInfo.AlchResistPoison),
+            new(MagicEffects.RoHAlchSoulTrapFFContact,          MagicEffectInfo.MAG_FortifyMovementSpeed),
+            new(MagicEffects.RoHAlchStagger,                    MagicEffectInfo.AlchDamageStaminaRavage),
         };
 
         /// <summary>
@@ -98,7 +124,6 @@ namespace ApothecaryAutoPatcher
 /// <example>
 /// var effect = new Effect(Skyrim.MagicEffect.AlchRestoreHealth, 0.96f, 10);
 /// </example>
-    public record Effect(FormLinkGetter<IMagicEffectGetter> BaseEffect, float Magnitude, int Duration);
 
     public class Program
     {
@@ -123,29 +148,29 @@ namespace ApothecaryAutoPatcher
         /// <remarks>This method is called by the Synthesis pipeline to run the patcher. It is responsible for patching the ingredients in the load order.</remarks>
         public static void RunPatch(IPatcherState<ISkyrimMod, ISkyrimModGetter> state)
         {
-            //Your code here!
-
+            var effectDictionary = Settings.Value.Effects.ToDictionary(e => e.EffectFrom.FormKey, e => e.EffectTo);
+    
             foreach (var ingredientGetter in state.LoadOrder.PriorityOrder.Ingredient().WinningOverrides())
             {
                 if (Settings.Value.Blacklist.Contains(ingredientGetter.ToLink())) continue;
+
                 var ingredientoverride = ingredientGetter.DeepCopy();
-                var overridden = false;
+                var overridden        = false;
+
                 foreach (var effect in ingredientoverride.Effects)
                 {
                     if (effect.Data == null) continue;
-                    foreach (var effectInfo in Settings.Value.Effects)
+
+                    if (effectDictionary.TryGetValue(effect.BaseEffect.FormKey, out var effectTo))
                     {
-                        if (effect.BaseEffect.FormKey == effectInfo.BaseEffect.FormKey)
-                        {
-                            if (effect.Data.Magnitude != effectInfo.Magnitude || effect.Data.Duration != effectInfo.Duration)
-                            {
-                                effect.Data.Magnitude = effectInfo.Magnitude;
-                                effect.Data.Duration = effectInfo.Duration;
-                                overridden = true;
-                            }
-                        }
+                        // No clue if this will convert. Will need to test.
+                        effect.BaseEffect.FormKey = effectTo.BaseEffect.FormKey;
+                        effect.Data.Magnitude     = effectTo.Magnitude;
+                        effect.Data.Duration      = effectTo.Duration;
+                        overridden                = true;
                     }
                 }
+
                 if (overridden)
                 {
                     state.PatchMod.Ingredients.Set(ingredientoverride);
