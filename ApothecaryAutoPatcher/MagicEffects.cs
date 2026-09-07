@@ -17,7 +17,7 @@ public static class MagicEffects
     public static readonly FormLinkGetter<IMagicEffectGetter> AlchLight                              = FormKey.Factory( "000846:ccBGSSSE037-Curios.esl"       ).ToLink<IMagicEffectGetter>();
     public static readonly FormLinkGetter<IMagicEffectGetter> AlchNightEye                           = FormKey.Factory( "000803:ccBGSSSE037-Curios.esl"       ).ToLink<IMagicEffectGetter>();
     public static readonly FormLinkGetter<IMagicEffectGetter> AlchWaterwalking                       = FormKey.Factory( "0390E1:Dragonborn.esm"               ).ToLink<IMagicEffectGetter>();
-    public static readonly FormLinkGetter<IMagicEffectGetter> BSKAlchCureParalysis                   = FormKey.Factory( "601944:BSAssets.esm"                 ).ToLink<IMagicEffectGetter>();
+    public static readonly FormLinkGetter<IMagicEffectGetter> BSKAlchCureParalysis                   = FormKey.Factory( "601945:BSAssets.esm"                 ).ToLink<IMagicEffectGetter>();
     public static readonly FormLinkGetter<IMagicEffectGetter> BSKAlchDamageHealthRate                = FormKey.Factory( "60190B:BSAssets.esm"                 ).ToLink<IMagicEffectGetter>();
     public static readonly FormLinkGetter<IMagicEffectGetter> BSKAlchDetectAnimal                    = FormKey.Factory( "60191F:BSAssets.esm"                 ).ToLink<IMagicEffectGetter>();
     public static readonly FormLinkGetter<IMagicEffectGetter> BSKAlchDetectLife                      = FormKey.Factory( "60190A:BSAssets.esm"                 ).ToLink<IMagicEffectGetter>();
