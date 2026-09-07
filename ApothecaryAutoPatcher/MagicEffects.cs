@@ -83,7 +83,7 @@ public static class MagicEffectInfo
     public static readonly Effect AlchFortifyPickpocket     = new(Skyrim.MagicEffect.AlchFortifyPickpocket,     3.3300000f,  60);
     public static readonly Effect AlchFortifyPowerAttacks   = new(Skyrim.MagicEffect.AlchFortifyEnchanting,     3.3300000f,  60); //MAG_AlchFortifyPowerAttacks
     public static readonly Effect AlchFortifyRestoration    = new(Skyrim.MagicEffect.AlchFortifyRestoration,    3.3300000f,  60);
-    public static readonly Effect AlchFortifyShouts         = new(Skyrim.MagicEffect.AlchFortifyHeavyArmor,     6.6700000f,  60); //MAG_AlchFortifyShouts
+    public static readonly Effect AlchFortifyShouts         = new(Skyrim.MagicEffect.AlchFortifyHeavyArmor,     3.3300000f,  60); //MAG_AlchFortifyShouts
     public static readonly Effect AlchFortifySneak          = new(Skyrim.MagicEffect.AlchFortifySneak,          3.3300000f,  60);
     public static readonly Effect AlchFortifySneakAttacks   = new(Skyrim.MagicEffect.AlchFortifyAlchemy,        3.3300000f,  60); //MAG_AlchFortifySneakAttacks
     public static readonly Effect AlchFortifyStamina        = new(Skyrim.MagicEffect.AlchFortifyStamina,        2.6700000f, 300);
